@@ -21,7 +21,7 @@ class PerguntasController extends Base
   
     public function getNewEntity()
     {
-        return new Jogo();
+        return new Pergunta();
     }
   
     public function setValues(&$entity, $params)
@@ -360,5 +360,18 @@ class PerguntasController extends Base
                 array_push($values, $value);
             }
         }
+    }
+
+    public function listAll($request, $response, $args)
+    {
+        $all = $this->findAll();
+
+        foreach ($all as $pergunta) {
+            
+        }
+
+        $return = $response->withJson($all, 200)
+            ->withHeader('Content-type', 'application/json');
+        return $return;
     }
 }
