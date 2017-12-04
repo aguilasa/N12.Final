@@ -376,8 +376,8 @@ class PerguntasController extends Base
     
             foreach ($query as $value) {
                 $array = [
-                    "id" => $value.id,
-                    "texto" => "foo",
+                    "id" => $value->id,
+                    "texto" => $value->texto
                 ];
                 array_push($pergunta->respostas, $array);
             }
