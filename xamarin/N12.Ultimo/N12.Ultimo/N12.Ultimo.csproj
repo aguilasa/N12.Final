@@ -5,11 +5,11 @@
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5BAE4829-AE55-4040-B8BB-3AAF0F99070C}</ProjectGuid>
+    <ProjectGuid>{E8F5A553-B3D0-4EF2-AF26-2882F183557D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>N12.Final</RootNamespace>
-    <AssemblyName>N12.Final</AssemblyName>
+    <RootNamespace>N12.Ultimo</RootNamespace>
+    <AssemblyName>N12.Ultimo</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>

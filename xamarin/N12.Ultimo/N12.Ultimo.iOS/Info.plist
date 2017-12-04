@@ -23,9 +23,9 @@
     <key>MinimumOSVersion</key>
     <string>8.0</string>
     <key>CFBundleDisplayName</key>
-    <string>N12.Final</string>
+    <string>N12.Ultimo</string>
     <key>CFBundleIdentifier</key>
-    <string>com.yourcompany.N12.Final</string>
+    <string>com.yourcompany.N12.Ultimo</string>
     <key>CFBundleVersion</key>
     <string>1.0</string>
     <key>CFBundleIconFiles</key>

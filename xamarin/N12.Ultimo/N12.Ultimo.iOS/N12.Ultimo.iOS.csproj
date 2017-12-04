@@ -6,12 +6,12 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FE3C9040-39F3-45C4-9FC0-5C27F4DC6323}</ProjectGuid>
+    <ProjectGuid>{3DBC6A5B-5FB1-4A0B-A10A-F033294C8511}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>N12.Final.iOS</RootNamespace>
+    <RootNamespace>N12.Ultimo.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>N12.Final.iOS</AssemblyName>
+    <AssemblyName>N12.Ultimo.iOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -147,9 +147,9 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\N12.Final\N12.Final.csproj">
-      <Project>{9b6cd822-9cc7-4200-98f4-f8e059e6406b}</Project>
-      <Name>N12.Final</Name>
+    <ProjectReference Include="..\N12.Ultimo\N12.Ultimo.csproj">
+      <Project>{b6b659ec-fb24-48d5-bcee-56b508a6b5be}</Project>
+      <Name>N12.Ultimo</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

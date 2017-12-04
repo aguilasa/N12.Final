@@ -5,7 +5,7 @@ using System.Text;
 
 using Xamarin.Forms;
 
-namespace N12.Final
+namespace N12.Ultimo
 {
     public partial class App : Application
     {
@@ -13,7 +13,7 @@ namespace N12.Final
         {
             InitializeComponent();
 
-            MainPage = new N12.Final.MainPage();
+            MainPage = new N12.Ultimo.MainPage();
         }
 
         protected override void OnStart()

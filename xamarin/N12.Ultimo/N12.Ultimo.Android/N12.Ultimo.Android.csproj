@@ -6,12 +6,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9F856BBB-4511-4885-9299-5D5BE2715A8F}</ProjectGuid>
+    <ProjectGuid>{080D6569-557C-48B7-A5C4-1D8D4B961768}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>N12.Final.Droid</RootNamespace>
-    <AssemblyName>N12.Final.Android</AssemblyName>
+    <RootNamespace>N12.Ultimo.Droid</RootNamespace>
+    <AssemblyName>N12.Ultimo.Android</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
@@ -157,9 +157,9 @@
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\N12.Final\N12.Final.csproj">
-      <Project>{9b6cd822-9cc7-4200-98f4-f8e059e6406b}</Project>
-      <Name>N12.Final</Name>
+    <ProjectReference Include="..\N12.Ultimo\N12.Ultimo.csproj">
+      <Project>{b6b659ec-fb24-48d5-bcee-56b508a6b5be}</Project>
+      <Name>N12.Ultimo</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
