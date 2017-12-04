@@ -5,9 +5,8 @@
              x:Class="N12.Final.MainPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Button x:Name="BtnResponder" Text="Responder" Clicked="BtnResponder_Clicked" />
+            <Button x:Name="BtnResultados" Text="Resultados" Clicked="BtnResultados_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
