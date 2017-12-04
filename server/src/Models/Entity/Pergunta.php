@@ -25,6 +25,7 @@ class Pergunta
      */
     public $texto;
 
+    public $respostas = array();
 
     /**
      * Get id

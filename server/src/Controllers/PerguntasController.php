@@ -366,11 +366,26 @@ class PerguntasController extends Base
     {
         $all = $this->findAll();
 
+        $perguntas = array();
         foreach ($all as $pergunta) {
-            
+            $sql = 'SELECT r FROM App\Models\Entity\Resposta r WHERE r.pergunta = ?1 ORDER BY r.id ASC';
+
+            $query = $this->getEntityManager()->createQuery($sql)
+                          ->setParameter(1, $pergunta->id)
+                          ->getResult();
+    
+            foreach ($query as $value) {
+                $array = [
+                    "id" => $value.id,
+                    "texto" => "foo",
+                ];
+                array_push($pergunta->respostas, $array);
+            }
+
+            array_push($perguntas, $pergunta);
         }
 
-        $return = $response->withJson($all, 200)
+        $return = $response->withJson($perguntas, 200)
             ->withHeader('Content-type', 'application/json');
         return $return;
     }
