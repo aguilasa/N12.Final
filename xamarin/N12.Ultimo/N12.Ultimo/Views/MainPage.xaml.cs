@@ -1,4 +1,7 @@
-﻿using System;
+﻿using N12.Ultimo.Models;
+using N12.Ultimo.Services;
+using N12.Ultimo.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,14 +17,22 @@ namespace N12.Ultimo
             InitializeComponent();
         }
 
-        private void BtnResponder_Clicked(object sender, EventArgs e)
+        private async void BtnResponder_Clicked(object sender, EventArgs e)
         {
+            PerguntasService service = new PerguntasService();
 
+            List<Pergunta> perguntas = await service.GetPerguntas();
         }
 
-        private void BtnResultados_Clicked(object sender, EventArgs e)
+        private async void BtnResultados_Clicked(object sender, EventArgs e)
         {
+            PerguntasService service = new PerguntasService();
 
+            List<Pergunta> perguntas = await service.GetResultados();
+            if (perguntas.Count == 0)
+            {
+                Navigation.PushAsync(new EmptyContent(2));
+            }
         }
     }
 }
