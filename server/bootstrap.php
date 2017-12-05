@@ -135,6 +135,11 @@ $entityManager = EntityManager::create($conn, $config);
  */
 $container['em'] = $entityManager;
 
+$configDbal = new \Doctrine\DBAL\Configuration();
+$dbal = \Doctrine\DBAL\DriverManager::getConnection($conn, $configDbal);
+
+$container['dbal'] = $dbal;
+
 /**
  * Application Instance
  */

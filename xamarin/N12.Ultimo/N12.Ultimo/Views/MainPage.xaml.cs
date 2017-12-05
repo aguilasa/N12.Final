@@ -13,5 +13,15 @@ namespace N12.Ultimo
         {
             InitializeComponent();
         }
+
+        private void BtnResponder_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnResultados_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

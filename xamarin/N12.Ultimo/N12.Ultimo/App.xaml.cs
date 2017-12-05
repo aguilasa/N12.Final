@@ -13,7 +13,7 @@ namespace N12.Ultimo
         {
             InitializeComponent();
 
-            MainPage = new N12.Ultimo.MainPage();
+            MainPage = new NavigationPage(new N12.Ultimo.MainPage());
         }
 
         protected override void OnStart()

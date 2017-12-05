@@ -1,49 +1,43 @@
 <?php
 namespace App\Controllers;
 
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
-
 use App\Models\Entity\Pergunta;
-use App\Models\Entity\Reposta;
 use App\Models\Entity\Respostas;
 
 require_once 'Base.php';
 
 class PerguntasController extends Base
 {
-    const esperado = array(0, 4, 2, 1, 1);
-
-    public function getEntityName()
+    function getEntityName()
     {
         return 'Pergunta';
     }
-  
-    public function getNewEntity()
+
+    function getNewEntity()
     {
         return new Pergunta();
     }
-  
-    public function setValues(&$entity, $params)
+
+    function setValues(&$entity, $params)
     {
-        
+
     }
 
-    private function findPergunta($id)
+    function findPergunta($id)
     {
         $repository = $this->getRepositoryByEntity('Pergunta');
         $pergunta = $repository->find($id);
         return $pergunta;
     }
 
-    private function findResposta($id)
+    function findResposta($id)
     {
         $repository = $this->getRepositoryByEntity('Resposta');
         $resposta = $repository->find($id);
         return $resposta;
     }
 
-    public function listAll($request, $response, $args)
+    function listAll($request, $response, $args)
     {
         $all = $this->findAll();
 
@@ -52,13 +46,13 @@ class PerguntasController extends Base
             $sql = 'SELECT r FROM App\Models\Entity\Resposta r WHERE r.pergunta = ?1 ORDER BY r.id ASC';
 
             $query = $this->getEntityManager()->createQuery($sql)
-                          ->setParameter(1, $pergunta->id)
-                          ->getResult();
-    
+                ->setParameter(1, $pergunta->id)
+                ->getResult();
+
             foreach ($query as $value) {
                 $array = [
                     "id" => $value->id,
-                    "texto" => $value->texto
+                    "texto" => $value->texto,
                 ];
                 array_push($pergunta->respostas, $array);
             }
@@ -71,7 +65,7 @@ class PerguntasController extends Base
         return $return;
     }
 
-    public function answer($request, $response, $args)
+    function answer($request, $response, $args)
     {
         $params = (object) $request->getParams();
         $pergunta = $this->findPergunta($params->pergunta);
@@ -81,7 +75,45 @@ class PerguntasController extends Base
         $respostas->setPergunta($pergunta);
         $respostas->setResposta($resposta);
 
-        $return = $response->withJson($respostas, 200)
+        $this->persist($respostas);
+
+        $return = $response->withJson($respostas, 201)
+            ->withHeader('Content-type', 'application/json');
+        return $return;
+    }
+
+    function results($request, $response, $args)
+    {
+        $all = $this->findAll();
+
+        $perguntas = array();
+        foreach ($all as $pergunta) {
+
+            $value = [
+                "id" => $pergunta->id,
+                "texto" => $pergunta->texto
+            ];
+
+            $sql = "select r1.resposta, r2.texto, count(r1.resposta) total from respostas r1, resposta r2 where r2.id = r1.resposta and r1.pergunta = " . $pergunta->id . " group by r1.resposta";
+            $dbQuery = $this->getDbal()->query($sql);
+            $result = $dbQuery->fetchAll();
+
+            $resultados = array();
+            foreach ($result as $resultado) {
+                $resultado = (object) $resultado;
+                $res = [
+                    "texto" => $resultado->texto,
+                    "total" => $resultado->total
+                ];
+
+                array_push($resultados, $res);
+            }
+
+            $value["resultados"] = $resultados;
+            array_push($perguntas, $value);
+        }
+
+        $return = $response->withJson($perguntas, 200)
             ->withHeader('Content-type', 'application/json');
         return $return;
     }

@@ -2,12 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:N12.Ultimo"
-             x:Class="N12.Ultimo.MainPage">
+             x:Class="N12.Ultimo.MainPage"
+             Title="Perguntas e Respostas">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="30">
+            <Button x:Name="BtnResponder" Text="Responder" Clicked="BtnResponder_Clicked" />
+            <Button x:Name="BtnResultados" Text="Resultados" Clicked="BtnResultados_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

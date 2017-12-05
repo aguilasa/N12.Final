@@ -23,6 +23,11 @@ abstract class Base
         return $this->container->get('serializer');
     }
 
+    public function getDbal()
+    {
+        return $this->container->get('dbal');
+    }
+
     public function getEntityManager()
     {
         return $this->container->get('em');
