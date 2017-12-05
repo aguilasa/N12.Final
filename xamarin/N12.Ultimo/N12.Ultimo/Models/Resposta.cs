@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace N12.Ultimo.Models
 {
+    public class Resultado
+    {
+        public string Texto { get; set; }
+        public int Total { get; set; }
+    }
+
     public class Resposta
     {
         public int Id { get; set; }
@@ -18,13 +24,22 @@ namespace N12.Ultimo.Models
         public string Texto { get; set; }
 
         private List<Resposta> respostas = new List<Resposta>();
-        public List<Resposta> Respostas {
+        public List<Resposta> Respostas
+        {
             get
             {
                 return respostas;
             }
         }
-    }
 
+        private List<Resultado> resultados = new List<Resultado>();
+        public List<Resultado> Resultados
+        {
+            get
+            {
+                return resultados;
+            }
+        }
+    }
 
 }
