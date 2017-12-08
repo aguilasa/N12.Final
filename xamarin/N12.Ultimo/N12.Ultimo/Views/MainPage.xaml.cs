@@ -22,7 +22,7 @@ namespace N12.Ultimo
             PerguntasService service = new PerguntasService();
             List<Pergunta> perguntas = await service.GetPerguntas();
 
-            await Navigation.PushAsync(new Question(perguntas, 0));
+            await Navigation.PushAsync(new Question(perguntas));
         }
 
         private async void BtnResultados_Clicked(object sender, EventArgs e)
@@ -33,6 +33,9 @@ namespace N12.Ultimo
             if (perguntas.Count == 0)
             {
                 await Navigation.PushAsync(new EmptyContent(2));
+            } else
+            {
+                await Navigation.PushAsync(new Result(perguntas));
             }
         }
 

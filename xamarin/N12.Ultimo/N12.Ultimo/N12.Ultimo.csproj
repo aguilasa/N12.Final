@@ -51,6 +51,7 @@
     <Compile Include="Views\Question.xaml.cs">
       <DependentUpon>Question.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Result.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\MainPage.xaml">

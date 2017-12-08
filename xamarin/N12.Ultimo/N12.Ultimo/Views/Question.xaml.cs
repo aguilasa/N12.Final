@@ -16,17 +16,16 @@ namespace N12.Ultimo.Views
     public partial class Question : ContentPage
     {
         private List<Pergunta> perguntas;
-        private int index;
+        private int index = 0;
         private int total = 0;
         private bool ultima = false;
         private ObservableCollection<ItemResposta> listaRespostas { get; set; }
         private ItemResposta atual = null;
         private List<ItemResposta> items = new List<ItemResposta>();
         
-        public Question(List<Pergunta> perguntas, int index)
+        public Question(List<Pergunta> perguntas)
         {
             this.perguntas = perguntas;
-            this.index = index;
             total = perguntas.Count;
             listaRespostas = new ObservableCollection<ItemResposta>();
             InitializeComponent();
