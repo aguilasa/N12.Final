@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using AsNum.XFControls.Droid;
 
 namespace N12.Ultimo.Droid
 {
@@ -19,6 +20,7 @@ namespace N12.Ultimo.Droid
 
             base.OnCreate(bundle);
 
+            AsNumAssemblyHelper.HoldAssembly();
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
         }

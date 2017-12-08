@@ -8,36 +8,36 @@ require_once 'Base.php';
 
 class PerguntasController extends Base
 {
-    function getEntityName()
+    public function getEntityName()
     {
         return 'Pergunta';
     }
 
-    function getNewEntity()
+    public function getNewEntity()
     {
         return new Pergunta();
     }
 
-    function setValues(&$entity, $params)
+    public function setValues(&$entity, $params)
     {
 
     }
 
-    function findPergunta($id)
+    public function findPergunta($id)
     {
         $repository = $this->getRepositoryByEntity('Pergunta');
         $pergunta = $repository->find($id);
         return $pergunta;
     }
 
-    function findResposta($id)
+    public function findResposta($id)
     {
         $repository = $this->getRepositoryByEntity('Resposta');
         $resposta = $repository->find($id);
         return $resposta;
     }
 
-    function listAll($request, $response, $args)
+    public function listAll($request, $response, $args)
     {
         $all = $this->findAll();
 
@@ -65,7 +65,7 @@ class PerguntasController extends Base
         return $return;
     }
 
-    function answer($request, $response, $args)
+    public function answer($request, $response, $args)
     {
         $params = (object) $request->getParams();
         $pergunta = $this->findPergunta($params->pergunta);
@@ -77,12 +77,12 @@ class PerguntasController extends Base
 
         $this->persist($respostas);
 
-        $return = $response->withJson($respostas, 201)
+        $return = $response->withJson(['msg' => "true"], 201)
             ->withHeader('Content-type', 'application/json');
         return $return;
     }
 
-    function results($request, $response, $args)
+    public function results($request, $response, $args)
     {
         $all = $this->findAll();
 
@@ -109,8 +109,10 @@ class PerguntasController extends Base
                 array_push($resultados, $res);
             }
 
-            $value["resultados"] = $resultados;
-            array_push($perguntas, $value);
+            if (count($resultados) > 0) {
+                $value["resultados"] = $resultados;
+                array_push($perguntas, $value);
+            }
         }
 
         $return = $response->withJson($perguntas, 200)

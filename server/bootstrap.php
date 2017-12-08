@@ -47,6 +47,7 @@ $container['serializer'] = $serializer;
 /**
  * Converte os Exceptions Genéricas dentro da Aplicação em respostas JSON
  */
+
 $container['errorHandler'] = function ($container) {
     return function ($request, $response, $exception) use ($container) {
         $statusCode = $exception->getCode() ? $exception->getCode() : 500;
@@ -123,6 +124,7 @@ $conn = array(
     'password' => 'root',
     'dbname' => 'dpm',
     'charset' => 'utf8',
+    "driverOptions" => array(1002=>"SET NAMES utf8")
 );
 
 /**

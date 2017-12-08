@@ -37,6 +37,9 @@
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -49,6 +52,12 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AsNum.XFControls, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XFControls.1.0.0.6\lib\MonoAndroid\AsNum.XFControls.dll</HintPath>
+    </Reference>
+    <Reference Include="AsNum.XFControls.Droid, Version=1.0.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\XFControls.1.0.0.6\lib\MonoAndroid\AsNum.XFControls.Droid.dll</HintPath>
+    </Reference>
     <Reference Include="FormsViewGroup, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.4.0.280\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
     </Reference>

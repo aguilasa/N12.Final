@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="N12.Ultimo.Views.Question"
+             Title="Pergunta">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label x:Name="lbPergunta"
+                   Text=""
+                   FontSize="Large"
+                   HorizontalOptions="Center" />
+
+            <ListView x:Name="lstPerguntas" ItemSelected="lstPerguntas_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Texto}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button x:Name="BtnProxima" 
+                    Text="Próxima Pergunta"
+                    Clicked="BtnProxima_Clicked" />
+            
+            <Button x:Name="BtnFinalizar" 
+                    Text="Finalizar"
+                    IsVisible="False"
+                    Clicked="BtnFinalizar_Clicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -20,8 +20,9 @@ namespace N12.Ultimo
         private async void BtnResponder_Clicked(object sender, EventArgs e)
         {
             PerguntasService service = new PerguntasService();
-
             List<Pergunta> perguntas = await service.GetPerguntas();
+
+            await Navigation.PushAsync(new Question(perguntas, 0));
         }
 
         private async void BtnResultados_Clicked(object sender, EventArgs e)
@@ -31,8 +32,13 @@ namespace N12.Ultimo
             List<Pergunta> perguntas = await service.GetResultados();
             if (perguntas.Count == 0)
             {
-                Navigation.PushAsync(new EmptyContent(2));
+                await Navigation.PushAsync(new EmptyContent(2));
             }
+        }
+
+        private async void BtnHome_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ListViewDemoPage());
         }
     }
 }
