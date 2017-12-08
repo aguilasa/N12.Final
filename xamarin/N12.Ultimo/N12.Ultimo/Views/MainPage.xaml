@@ -8,7 +8,6 @@
         <StackLayout Padding="30">
             <Button x:Name="BtnResponder" Text="Responder" Clicked="BtnResponder_Clicked" />
             <Button x:Name="BtnResultados" Text="Resultados" Clicked="BtnResultados_Clicked" />
-            <Button x:Name="BtnHome" Text="Home" Clicked="BtnHome_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

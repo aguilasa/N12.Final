@@ -43,7 +43,6 @@
     <Compile Include="Views\EmptyContent.xaml.cs">
       <DependentUpon>EmptyContent.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ListViewDemoPage.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

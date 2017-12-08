@@ -38,10 +38,5 @@ namespace N12.Ultimo
                 await Navigation.PushAsync(new Result(perguntas));
             }
         }
-
-        private async void BtnHome_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new ListViewDemoPage());
-        }
     }
 }
